@@ -36,7 +36,7 @@
   .navlinks a:hover{color:var(--gold2)}
   .hero{min-height:94vh;display:grid;align-items:center;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08)}
   .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 35%, rgba(200,169,104,.16), transparent 31%),radial-gradient(circle at 20% 70%, rgba(255,255,255,.05), transparent 35%),linear-gradient(135deg,#090a0c,#11151a 55%,#090a0c)}
-  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;padding-top:110px;padding-bottom:65px}
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:44px;padding-top:110px;padding-bottom:65px;min-width:0}.hero-grid>div{min-width:0}
   h1{font-family:var(--serif);font-weight:500;letter-spacing:.06em;font-size:clamp(3.6rem,8vw,7.8rem);line-height:.87;margin:18px 0 25px}
   .hero h2{font-size:clamp(1.1rem,2vw,1.55rem);font-weight:500;max-width:640px;color:#e9e5dc;margin:0 0 22px}
   .hero-copy{font-size:1.05rem;color:#bab9b4;max-width:600px}
@@ -92,8 +92,31 @@
   .fineprint{font-size:.76rem;color:#77766f;margin-top:10px}
   footer{padding:30px 0;color:#7f7d77;font-size:.8rem;border-top:1px solid rgba(255,255,255,.08)}
   .footerin{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-  @media(max-width:900px){.hero-grid,.split,.cta-inner{grid-template-columns:1fr}.hero{min-height:auto}.hero-art{min-height:420px}.card-grid,.energy,.trust{grid-template-columns:1fr 1fr}.sample-list{grid-template-columns:1fr 1fr}.navlinks{display:none}}
-  @media(max-width:600px){.section{padding:75px 0}.card-grid,.energy,.trust,.sample-list{grid-template-columns:1fr}.hero-art{min-height:330px}.art-label .big{font-size:1.8rem}.hero-grid{padding-top:110px}.btn{width:100%}.hero-actions{flex-direction:column}.video-shell{margin-top:25px}}
+  @media(max-width:900px){.hero-grid,.split,.cta-inner{grid-template-columns:minmax(0,1fr)}.hero{min-height:auto}.hero-grid{gap:28px}.hero-art{min-height:420px;width:100%;min-width:0}.art-box{width:100%;max-width:520px}.card-grid,.energy,.trust{grid-template-columns:1fr 1fr}.sample-list{grid-template-columns:1fr 1fr}.navlinks{display:none}}
+  @media(max-width:600px){
+  .section{padding:72px 0}
+  .wrap{width:min(100% - 32px,1180px)}
+  .navin{height:66px}.wordmark{font-size:.88rem;letter-spacing:.14em}.nav>.wrap>.btn{padding:11px 14px;font-size:.75rem}
+  .card-grid,.energy,.trust,.sample-list{grid-template-columns:1fr}
+  .hero{min-height:auto;overflow:clip}
+  .hero:before{background:radial-gradient(circle at 50% 28%, rgba(200,169,104,.16), transparent 42%),linear-gradient(160deg,#090a0c,#11151a 65%,#090a0c)}
+  .hero-grid{grid-template-columns:minmax(0,1fr);gap:28px;padding-top:96px;padding-bottom:52px;width:min(100% - 32px,1180px)}
+  .hero-grid>div{min-width:0;width:100%}
+  h1{font-size:clamp(3rem,17vw,5rem);line-height:.9;letter-spacing:.03em;margin:14px 0 20px;word-break:normal}
+  .hero h2{font-size:1.03rem;line-height:1.35;margin-bottom:18px}
+  .hero-copy{font-size:.98rem;line-height:1.55}
+  .hero-actions{flex-direction:column;gap:10px;margin-top:24px}
+  .hero-actions .btn{width:100%;min-height:50px}
+  .hero-note{gap:10px 16px;margin-top:22px;font-size:.75rem}
+  .hero-note span{padding-left:11px}
+  .hero-art{min-height:0;height:auto;display:block;margin-top:2px}
+  .art-box{width:100%;max-width:none;aspect-ratio:1/1;min-height:0}
+  .art-label{inset:auto 18px 18px 18px;gap:14px;align-items:flex-end}
+  .art-label .big{font-size:1.5rem;line-height:1.02}
+  .art-label .small{font-size:.58rem;letter-spacing:.12em}
+  .line1,.line2,.line3{left:5%;right:5%}
+  .video-shell{margin-top:25px}
+}
 </style>
 </head>
 <body>
@@ -113,7 +136,7 @@
         <div class="eyebrow">Southern California • Premium Live Music</div>
         <h1>COUNTERTONE</h1>
         <h2>FAMILIAR SONGS. TRANSFORMED LIVE.</h2>
-        <p class="hero-copy">A distinctive live music experience where acoustic guitar, vocals and improvisational trumpet weave together in real time—turning familiar songs into something guests don't expect.</p>
+        <p class="hero-copy">A premium live music experience where acoustic guitar, vocals and improvisational trumpet weave together in real time — turning familiar songs into something stunningly unique.</p>
         <div class="hero-actions">
           <a href="#contact" class="btn primary">Check My Date</a>
           <a href="#sound" class="btn">Hear the Difference ↓</a>
